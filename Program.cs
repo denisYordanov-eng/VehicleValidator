@@ -1,6 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
+using VehicleAccesValidator.Services;
 using VehicleValidator.Data;
+using VehicleValidator.Services.VehicleAccesValidator;
 namespace VehicleValidator
 {
     public class Program
@@ -11,8 +13,11 @@ namespace VehicleValidator
             builder.Services.AddDbContext<VehicleValidatorContext>(options =>
                 options.UseSqlServer(builder.Configuration.GetConnectionString("VehicleValidatorContext") ?? throw new InvalidOperationException("Connection string 'VehicleValidatorContext' not found.")));
 
+          
             // Add services to the container.
             builder.Services.AddControllersWithViews();
+            builder.Services.AddScoped<BaseVehiclesValidator, VehicleValidatorAccess>();
+
 
             var app = builder.Build();
 

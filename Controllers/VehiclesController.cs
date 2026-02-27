@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using VehicleAccesValidator.Services;
 using VehicleValidator.Data;
 using VehicleValidator.Models;
+using VehicleValidator.Services.VehicleAccesValidator;
 
 namespace VehicleValidator.Controllers
 {
@@ -40,7 +41,8 @@ namespace VehicleValidator.Controllers
             {
                 return NotFound();
             }
-            BaseVehiclesValidator validator = new VehicleAccesValidator.Services.VehicleValidator();
+           BaseVehiclesValidator validator = new VehicleValidatorAccess();
+
             string result = validator.CheckVehicle(vehicle);
             ViewBag.Result = result;
 
