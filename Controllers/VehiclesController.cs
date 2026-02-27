@@ -40,7 +40,7 @@ namespace VehicleValidator.Controllers
             {
                 return NotFound();
             }
-            IVehiclesValidator validator = new VehicleAccesValidator.Services.VehicleValidator();
+            BaseVehiclesValidator validator = new VehicleAccesValidator.Services.VehicleValidator();
             string result = validator.CheckVehicle(vehicle);
             ViewBag.Result = result;
 

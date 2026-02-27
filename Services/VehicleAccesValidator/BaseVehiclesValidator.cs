@@ -3,11 +3,11 @@
 
     namespace VehicleAccesValidator.Services
     {
-        public abstract class IVehiclesValidator
+        public abstract class BaseVehiclesValidator
         {
             public abstract string CheckVehicle(Vehicle vehicle);
         }
-        public class VehicleValidator : IVehiclesValidator
+        public class VehicleValidator : BaseVehiclesValidator
         {
             public VehicleValidator() { }
             public override string CheckVehicle(Vehicle vehicle)
