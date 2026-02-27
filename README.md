@@ -39,6 +39,7 @@ The project follows a simple layered structure:
    
    
    How to start the app:
+   
 	1.Clone the repository.
 	
 	2.Open the project in Visual Studio.
