@@ -39,9 +39,9 @@ The project follows a simple layered structure:
    
    
    How to start the app:
-	1. Clone the repository.
-	2. Open the project in Visual Studio.
-	3. press ctrl + f5 and the app will start.
+	1.Clone the repository.
+	2.Open the project in Visual Studio.
+	3.press ctrl + f5 and the app will start.
 	
 	In the future I can add a class in the Model that inheritance "Vehicle" class that inplements vehicles with special regime of movement such as(police cars, ambulances).
    
