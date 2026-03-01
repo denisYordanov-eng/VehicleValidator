@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using VehicleAccesValidator.Services;
 using VehicleValidator.Data;
 using VehicleValidator.Models;
+using VehicleValidator.Services.VehicleAccessValidator;
 using VehicleValidator.Services.VehicleAccesValidator;
 
 namespace VehicleValidator.Controllers
@@ -41,8 +42,19 @@ namespace VehicleValidator.Controllers
             {
                 return NotFound();
             }
-           BaseVehiclesValidator validator = new VehicleValidatorAccess();
 
+            //TODO: refactor using visitor pattern
+
+            BaseVehiclesValidator validator;
+            if (vehicle is Ambulance)
+            {
+                 validator = new AmbulanceValidator();
+            }
+            else
+            {
+                 validator = new VehicleValidatorAccess();
+            }
+              
             string result = validator.CheckVehicle(vehicle);
             ViewBag.Result = result;
 
@@ -69,6 +81,22 @@ namespace VehicleValidator.Controllers
                 return RedirectToAction(nameof(Index));
             }
             return View(vehicle);
+        }
+        public IActionResult CreateAmbulance()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> CreateAmbulance([Bind("Id,Brand,Model,EcoGroup,FuelType,YearOfProduction,TheLightsAreOn")] Ambulance ambulance)
+        {
+            if (ModelState.IsValid)
+            {
+                _context.Add(ambulance);
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
+            }
+            return View(ambulance);
         }
 
         // GET: Vehicles/Edit/5

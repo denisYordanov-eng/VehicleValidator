@@ -18,13 +18,13 @@ namespace VehicleValidator.Models
         public int YearOfProduction { get; set; }
 
         public Vehicle() { }
-        public Vehicle(int id, string brand, string model, int ecogroup, string fueltype, int yearOfProduction)
+        public Vehicle(int id, string brand, string model, int ecoGroup, string fuelType, int yearOfProduction)
         {
             Id = id;
             Brand = brand;
             Model = model;
-            EcoGroup = ecogroup;
-            FuelType = fueltype;
+            EcoGroup = ecoGroup;
+            FuelType = fuelType;
             YearOfProduction = yearOfProduction;
         }
     }
