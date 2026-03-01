@@ -32,16 +32,22 @@ The project follows a simple layered structure:
 
 - Model - "Vehicle" - represents the input data.
 - Service Layer - "VehicleValidator" contains business logic.
-- Controller – "ValidatorController" handles requests and responses.
+- Controller â€“ "ValidatorController" handles requests and responses.
 - View - Razor view for user interaction.
 - Used dependecy injection that contains basic abstract baseclass "VehiclesValidator" with abstract method and class a "VehicleValidator" that inheritance the "VehiclesValidator" and
  override the method.
    
    
    How to start the app:
-	1. Clone the repository.
-	2. Open the project in Visual Studio.
+   
+   
+	1.Clone the repository.
+	
+	2.Open the project in Visual Studio.
+	
 	3.press ctrl + f5 and the app will start.
+
+  
 	
 	In the future I can add a class in the Model that inheritance "Vehicle" class that inplements vehicles with special regime of movement such as(police cars, ambulances).
    
