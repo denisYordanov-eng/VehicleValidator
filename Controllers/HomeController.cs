@@ -15,7 +15,7 @@ namespace VehicleValidator.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            return Redirect("/Vehicles/Index");
         }
 
         public IActionResult Privacy()

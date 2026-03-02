@@ -5,13 +5,17 @@ namespace VehicleValidator.Models
     public class Vehicle
     {
         public int Id { get; set; }
+        [Required]
         public string Brand { get; set; }
+        [Required]
         public string Model { get; set; }
 
         [Range(1, 3)]
+        [Required]
         public int EcoGroup { get; set; }
 
-        [RegularExpression(@"^(?i)(diesel)|(gasoline)||(gas)|(hybrid)|(electric)$")]
+        [RegularExpression(@"^(?i)(diesel)|(gasoline)||(gas)|(hybrid)|(electric)$",
+            ErrorMessage = "Invalid fuel type!")]
         public string FuelType { get; set; }
 
         [Required]
@@ -24,7 +28,7 @@ namespace VehicleValidator.Models
             Brand = brand;
             Model = model;
             EcoGroup = ecoGroup;
-            FuelType = fuelType;
+            FuelType = fuelType.ToLower();
             YearOfProduction = yearOfProduction;
         }
     }
