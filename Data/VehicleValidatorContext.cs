@@ -13,7 +13,9 @@ namespace VehicleValidator.Data
             : base(options)
         {
         }
-
+        
         public DbSet<VehicleValidator.Models.Vehicle> Vehicle { get; set; } = default!;
+
+        public DbSet<VehicleValidator.Models.Ambulance> Ambulance { get; set; } = default!;
     }
 }

@@ -1,8 +1,13 @@
 {
   "dependencies": {
+    "secrets1": {
+      "type": "secrets.user"
+    },
     "mssql1": {
+      "secretStore": "LocalSecretsFile",
       "type": "mssql.local",
-      "connectionId": "ConnectionStrings:VehicleValidatorContext"
+      "connectionId": "ConnectionStrings:VehicleValidatorContext1",
+      "dynamicId": null
     }
   }
 }

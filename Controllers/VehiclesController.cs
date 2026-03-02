@@ -37,7 +37,10 @@ namespace VehicleValidator.Controllers
             }
 
             var vehicle = await _context.Vehicle
-                .FirstOrDefaultAsync(m => m.Id == id);
+                .Where(m => m.Id == id)
+                .Select(v => v)
+                .FirstOrDefaultAsync();
+
             if (vehicle == null)
             {
                 return NotFound();
