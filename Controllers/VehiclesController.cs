@@ -11,6 +11,7 @@ using VehicleValidator.Models;
 using VehicleValidator.Services.VehicleAccessValidator;
 using VehicleValidator.Services.VehicleAccesValidator;
 
+
 namespace VehicleValidator.Controllers
 {
     public class VehiclesController : Controller
@@ -57,7 +58,7 @@ namespace VehicleValidator.Controllers
             {
                  validator = new VehicleValidatorAccess();
             }
-              
+
             string result = validator.CheckVehicle(vehicle);
             ViewBag.Result = result;
 

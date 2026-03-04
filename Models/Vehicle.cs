@@ -12,12 +12,14 @@ namespace VehicleValidator.Models
 
         [Range(1, 3)]
         [Required]
+        [Display(Name = "Eco Group")]
         public int EcoGroup { get; set; }
 
         [RegularExpression(@"^(?i)(diesel)|(gasoline)||(gas)|(hybrid)|(electric)$",
             ErrorMessage = "Invalid fuel type!")]
+        [Display(Name = "Fuel type")]
         public string FuelType { get; set; }
-
+        [Display(Name = "Year of production")]
         [Required]
         public int YearOfProduction { get; set; }
 
