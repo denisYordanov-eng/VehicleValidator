@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using VehicleAccesValidator.Services;
+
 using VehicleValidator.Data;
 using VehicleValidator.Models;
 using VehicleValidator.Services.VehicleAccessValidator;
@@ -17,10 +17,16 @@ namespace VehicleValidator.Controllers
     public class VehiclesController : Controller
     {
         private readonly VehicleValidatorContext _context;
+        private readonly VehicleValidatorAccess _defaultValidator;
+        private readonly AmbulanceValidator _ambulanceValidator;
 
-        public VehiclesController(VehicleValidatorContext context)
+        public VehiclesController(VehicleValidatorContext context
+            , VehicleValidatorAccess defaultValidator
+            , AmbulanceValidator ambulanceValidator)
         {
             _context = context;
+            _defaultValidator = defaultValidator;
+            _ambulanceValidator = ambulanceValidator;
         }
 
         // GET: Vehicles
@@ -47,21 +53,18 @@ namespace VehicleValidator.Controllers
                 return NotFound();
             }
 
-            //TODO: refactor using visitor pattern
-
-            BaseVehiclesValidator validator;
+            //TODO: refactor using factory pattern
+            IVehicleValidator validator;
             if (vehicle is Ambulance)
             {
-                 validator = new AmbulanceValidator();
+                validator = _ambulanceValidator;
+
             }
             else
             {
-                 validator = new VehicleValidatorAccess();
+                validator = _defaultValidator;
             }
-
-            string result = validator.CheckVehicle(vehicle);
-            ViewBag.Result = result;
-
+        ViewBag.Result = validator.CheckVehicle(vehicle);
             return View(vehicle);
         }
 

@@ -1,12 +1,11 @@
-﻿using VehicleAccesValidator.Services;
+﻿
 using VehicleValidator.Models;
 
 namespace VehicleValidator.Services.VehicleAccessValidator
 {
-    public class AmbulanceValidator : BaseVehiclesValidator
+    public class AmbulanceValidator : IVehicleValidator
     {
-        public AmbulanceValidator() { }
-        public override string CheckVehicle(Vehicle vehicle)
+        public string CheckVehicle(Vehicle vehicle)
         {
             if (vehicle is Ambulance ambulance)
             {

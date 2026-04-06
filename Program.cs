@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
-using VehicleAccesValidator.Services;
 using VehicleValidator.Data;
+using VehicleValidator.Services.VehicleAccessValidator;
 using VehicleValidator.Services.VehicleAccesValidator;
 namespace VehicleValidator
 {
@@ -16,7 +16,10 @@ namespace VehicleValidator
           
             // Add services to the container.
             builder.Services.AddControllersWithViews();
-            builder.Services.AddScoped<BaseVehiclesValidator, VehicleValidatorAccess>();
+            builder.Services.AddScoped<VehicleValidatorAccess>();
+            builder.Services.AddScoped<AmbulanceValidator>();
+            builder.Services.AddScoped<IVehicleValidator, VehicleValidatorAccess>();
+        
 
 
             var app = builder.Build();
