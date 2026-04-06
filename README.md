@@ -48,7 +48,6 @@ The project follows a simple layered structure:
 	3.press ctrl + f5 and the app will start.
 
   
-	
-	In the future I can add a class in the Model that inheritance "Vehicle" class that inplements vehicles with special regime of movement such as(police cars, ambulances).
+
    
-   My choise to not use enums and interfaces is because I want to focus more on ASP.NET Core technology and use ways of making logic with my current knowledge.
+   My choise to not use enums because I want to focus more on ASP.NET Core technology and use ways of making logic with my current knowledge.
