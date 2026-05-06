@@ -50,4 +50,4 @@ The project follows a simple layered structure:
   
 
    
-   My choise to not use enums because I want to focus more on ASP.NET Core technology and use ways of making logic with my current knowledge.
+   
