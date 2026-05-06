@@ -1,4 +1,5 @@
 ﻿using System.Transactions;
+using VehicleValidator.Models.Enums;
 
 namespace VehicleValidator.Models
 {
@@ -11,7 +12,7 @@ namespace VehicleValidator.Models
            
         }
 
-        public Ambulance(int id, string brand, string model, int ecoGroup, string fuelType, int yearOfProduction, bool theLightsAreOn)
+        public Ambulance(int id, string brand, string model, EcoCategory ecoGroup, FuelType fuelType, int yearOfProduction, bool theLightsAreOn)
             : base(id, brand, model, ecoGroup, fuelType, yearOfProduction)
         {
             TheLightsAreOn = theLightsAreOn;

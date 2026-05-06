@@ -2,7 +2,6 @@
 using Microsoft.Extensions.DependencyInjection;
 using VehicleValidator.Data;
 using VehicleValidator.Services.VehicleAccessValidator;
-using VehicleValidator.Services.VehicleAccesValidator;
 namespace VehicleValidator
 {
     public class Program

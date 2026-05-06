@@ -9,7 +9,6 @@ using Microsoft.EntityFrameworkCore;
 using VehicleValidator.Data;
 using VehicleValidator.Models;
 using VehicleValidator.Services.VehicleAccessValidator;
-using VehicleValidator.Services.VehicleAccesValidator;
 
 
 namespace VehicleValidator.Controllers

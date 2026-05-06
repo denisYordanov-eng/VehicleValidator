@@ -13,7 +13,7 @@ namespace VehicleValidator.Services.VehicleAccessValidator
                 {
                     return "Ambulance is allowed to access both the small and the big ring.";
                 }
-                else if (!ambulance.TheLightsAreOn && ambulance.EcoGroup < 3)
+                else if (!ambulance.TheLightsAreOn && ambulance.EcoGroup < Models.Enums.EcoCategory.CategoryThree)
                 {
                     return "Ambulance is not allowed to small and big ring of the city because the lights are off.";
                 }

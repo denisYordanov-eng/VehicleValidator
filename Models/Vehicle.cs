@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using VehicleValidator.Models.Enums;
 
 namespace VehicleValidator.Models
 {
@@ -10,27 +11,25 @@ namespace VehicleValidator.Models
         [Required]
         public string Model { get; set; }
 
-        [Range(1, 3)]
+      
         [Required]
         [Display(Name = "Eco Group")]
-        public int EcoGroup { get; set; }
+        public EcoCategory EcoGroup { get; set; }
 
-        [RegularExpression(@"^(?i)(diesel)|(gasoline)||(gas)|(hybrid)|(electric)$",
-            ErrorMessage = "Invalid fuel type!")]
-        [Display(Name = "Fuel type")]
-        public string FuelType { get; set; }
+        public FuelType Fuel { get; set; }
+
         [Display(Name = "Year of production")]
         [Required]
         public int YearOfProduction { get; set; }
 
         public Vehicle() { }
-        public Vehicle(int id, string brand, string model, int ecoGroup, string fuelType, int yearOfProduction)
+        public Vehicle(int id, string brand, string model, EcoCategory ecoGroup, FuelType fuelType, int yearOfProduction)
         {
             Id = id;
             Brand = brand;
             Model = model;
             EcoGroup = ecoGroup;
-            FuelType = fuelType.ToLower();
+            Fuel = fuelType;
             YearOfProduction = yearOfProduction;
         }
     }
