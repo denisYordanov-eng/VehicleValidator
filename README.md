@@ -34,8 +34,7 @@ The project follows a simple layered structure:
 - Service Layer - "VehicleValidator" contains business logic.
 - Controller – "ValidatorController" handles requests and responses.
 - View - Razor view for user interaction.
-- Used dependecy injection that contains basic abstract baseclass "VehiclesValidator" with abstract method and class a "VehicleValidator" that inheritance the "VehiclesValidator" and
- override the method.
+- Used an interface-based approach for the validation logic. This allows the system to be easily updated or changed in the future.
    
    
    How to start the app:
