@@ -11,7 +11,7 @@ namespace VehicleValidator.Models
         [Required]
         public string Model { get; set; }
 
-      
+     
         [Required]
         [Display(Name = "Eco Group")]
         public EcoCategory EcoGroup { get; set; }
@@ -23,13 +23,14 @@ namespace VehicleValidator.Models
         public int YearOfProduction { get; set; }
 
         public Vehicle() { }
-        public Vehicle(int id, string brand, string model, EcoCategory ecoGroup, FuelType fuelType, int yearOfProduction)
+        
+        public Vehicle(int id, string brand, string model, EcoCategory ecoGroup, FuelType fuel, int yearOfProduction)
         {
             Id = id;
             Brand = brand;
             Model = model;
             EcoGroup = ecoGroup;
-            Fuel = fuelType;
+            Fuel = fuel;
             YearOfProduction = yearOfProduction;
         }
     }
